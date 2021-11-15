@@ -19,12 +19,12 @@ steps:
         buildNumber=$(cat _BUILDNUMBER)
         echo "Build Number is ${buildNumber}"
         ./submit.sh DataflowDemoPipeline \
-          --project=zhong-gcp \
-          --stagingLocation=gs://zhong-gcp/stage/ \
-          --gcpTempLocation=gs://zhong-gcp/temp/ \
+          --project=datastreamer-302817 \
+          --stagingLocation=gs://jf-temp-nov-15/stage/ \
+          --gcpTempLocation=gs://jf-temp-nov-15/temp/ \
           --runner=DataflowRunner \
           --autoscalingAlgorithm=THROUGHPUT_BASED \
-          --maxNumWorkers=10 \
+          --maxNumWorkers=5 \
           --jobName=demo \
           --buildNumber=${buildNumber} \
           --subscription=dataflow_demo_subscription \
